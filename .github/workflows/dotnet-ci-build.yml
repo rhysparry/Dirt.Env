@@ -9,23 +9,27 @@ on:
       - main
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    env:
+      BUILD_CONFIGURATION: Debug
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        steps:
-        - name: Checkout
-          uses: actions/checkout@v4
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-        - name: Setup .NET Core
-          uses: actions/setup-dotnet@v4
-          with:
-            dotnet-version: '8.0.x'
+      - name: Install just
+        uses: extractions/setup-just@v2
 
-        - name: Restore dependencies
-          run: dotnet restore
+      - name: Restore dependencies
+        run: just --no-deps restore
 
-        - name: Build
-          run: dotnet build
+      - name: Build
+        run: just --no-deps build
 
-        - name: Test
-          run: dotnet test --no-build --verbosity normal
+      - name: Test
+        run: just --no-deps test

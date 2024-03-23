@@ -6,47 +6,50 @@ on:
       - 'v*.*.*'
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-        - name: Checkout
-          uses: actions/checkout@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        - name: Setup .NET Core
-          uses: actions/setup-dotnet@v4
-          with:
-            dotnet-version: '8.0.x'
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-        - name: Restore dependencies
-          run: dotnet restore
+      - name: Install just
+        uses: extractions/setup-just@v2
 
-        - name: Build
-          run: dotnet build --configuration Release
+      - name: Restore dependencies
+        run: just --no-deps restore
 
-        - name: Test
-          run: dotnet test --configuration Release --no-build --verbosity normal
+      - name: Build
+        run: just --no-deps build
 
-        - name: Pack
-          run: dotnet pack --configuration Release
-          if: startsWith(github.ref, 'refs/tags/v')
+      - name: Test
+        run: just --no-deps test
 
-        - name: Create a release with the NuGet Package
-          uses: softprops/action-gh-release@v2
-          with:
-            files: '**/*.nupkg'
-          if: startsWith(github.ref, 'refs/tags/v')
+      - name: Pack
+        run: just --no-deps pack
+        if: startsWith(github.ref, 'refs/tags/v')
 
-        - name: Load NuGet API Key
-          uses: 1password/load-secrets-action@v1
-          with:
-            export-env: true
-          env:
-            OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-            NUGET_API_KEY: "op://GitHub Actions/NuGet API Dirt/credential"
-          if: startsWith(github.ref, 'refs/tags/v')
+      - name: Create a release with the NuGet Package
+        uses: softprops/action-gh-release@v2
+        with:
+          files: '**/*.nupkg'
+        if: startsWith(github.ref, 'refs/tags/v')
 
-        - name: Push NuGet package
-          run: dotnet nuget push **/*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
-          if: startsWith(github.ref, 'refs/tags/v')
+      - name: Load NuGet API Key
+        uses: 1password/load-secrets-action@v2
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          NUGET_API_KEY: "op://GitHub Actions/NuGet API Dirt/credential"
+        if: startsWith(github.ref, 'refs/tags/v')
+
+      - name: Push NuGet package
+        run: just --no-deps nuget-push
+        if: startsWith(github.ref, 'refs/tags/v')
 
