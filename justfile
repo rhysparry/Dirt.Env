@@ -1,6 +1,6 @@
 set windows-shell := ["nu", "-c"]
 
-version := "1.0.2"
+version := "1.1.0"
 configuration := env("BUILD_CONFIGURATION", "Release")
 nugetApiKey := env("NUGET_API_KEY", "")
 
