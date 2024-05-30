@@ -4,6 +4,8 @@ version := "1.1.0"
 configuration := env("BUILD_CONFIGURATION", "Release")
 nugetApiKey := env("NUGET_API_KEY", "")
 
+test_filter := if os_family() == "windows" { "Platform!=Nix" } else { "Platform!=Windows" }
+
 restore:
     dotnet restore
 
@@ -11,7 +13,7 @@ build: restore
     dotnet build --no-restore --configuration {{configuration}} /p:Version={{version}} /p:AssemblyVersion={{version}}
 
 test: build
-    dotnet test --no-build --verbosity normal --configuration {{configuration}}
+    dotnet test --no-build --verbosity normal --configuration {{configuration}} --filter {{test_filter}}
 
 pack: build
     dotnet pack --no-build --configuration {{configuration}} /p:PackageVersion={{version}}
