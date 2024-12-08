@@ -52,7 +52,7 @@ assert-no-pending-changes:
 assert-no-pending-changes:
     [ -z "$(git status --porcelain)" ]
 
-release: (assert-branch "main") assert-no-pending-changes && push-release
+release: (assert-branch "main") assert-no-pending-changes artifacts-dir && push-release
     git pull
     git-cliff --bump --output CHANGELOG.md
     git-cliff --bump --unreleased --strip header --output artifacts/RELEASE-NOTES.md
