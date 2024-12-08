@@ -12,24 +12,22 @@ jobs:
   build:
     env:
       BUILD_CONFIGURATION: Debug
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup .NET Core
+        with:
+          fetch-depth: 0
+      - name: Setup .NET Core 8
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-
-      - name: Install just
-        uses: extractions/setup-just@v2
-
-      - name: Restore dependencies
-        run: just --no-deps restore
-
-      - name: Build
-        run: just --no-deps build
-
+      - name: "Install tools"
+        uses: taiki-e/install-action@v2
+        with:
+          tool: just@1.36.0,git-cliff@2.6.1
       - name: Test
-        run: just --no-deps test
+        run: just test
