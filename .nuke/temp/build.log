@@ -1,0 +1,192 @@
+15:41:09.099 | V |                      | ArgumentsFromParametersFile.OnBuildCreated (150)
+15:41:09.110 | V |                      | HandleReSharperSurrogateArguments.OnBuildCreated (150)
+15:41:09.110 | V |                      | InjectParameterValues.OnBuildCreated (100)
+15:41:09.122 | V |                      | HandleShellCompletion.OnBuildCreated (75)
+15:41:09.291 | V |                      | GenerateBuildServerConfigurations.OnBuildCreated (50)
+15:41:09.291 | V |                      | InvokeBuildServerConfigurationGeneration.OnBuildCreated (45)
+15:41:09.298 | V |                      | UpdateNotification.OnBuildCreated (10)
+15:41:09.298 | V |                      | UnsetVisualStudioEnvironmentVariables.OnBuildCreated (0)
+15:41:09.298 | V |                      | HandleVisualStudioDebugging.OnBuildCreated (0)
+15:41:09.299 | V |                      | EventInvoker.OnBuildCreated (-3.4028235E+38)
+15:41:09.305 | V |                      | HandlePlanRequests.OnBuildInitialized (10)
+15:41:09.305 | V |                      | HandleHelpRequests.OnBuildInitialized (5)
+15:41:09.306 | V |                      | Telemetry.OnBuildInitialized (0)
+15:41:09.597 | V |                      | Sending BuildStarted telemetry event ...
+15:41:09.598 | V |                      |   build_components         = 
+15:41:09.598 | V |                      |   build_type               = Project
+15:41:09.598 | V |                      |   compile_time             = <null>
+15:41:09.598 | V |                      |   config_generators        = 
+15:41:09.598 | V |                      |   host                     = Terminal
+15:41:09.598 | V |                      |   num_custom_components    = 0
+15:41:09.598 | V |                      |   num_custom_extensions    = 0
+15:41:09.598 | V |                      |   num_partitioned_targets  = 0
+15:41:09.598 | V |                      |   num_secrets              = 1
+15:41:09.598 | V |                      |   num_targets              = 6
+15:41:09.598 | V |                      |   os_architecture          = Arm64
+15:41:09.598 | V |                      |   os_platform              = OSX
+15:41:09.598 | V |                      |   repo_branch              = main
+15:41:09.598 | V |                      |   repo_commit              = b6c9dc
+15:41:09.598 | V |                      |   repo_provider            = GitHub
+15:41:09.598 | V |                      |   repo_url                 = 3bcd90
+15:41:09.598 | V |                      |   target_framework         = .NETCoreApp,Version=v8.0
+15:41:09.598 | V |                      |   version_dotnet_sdk       = 8.0.404
+15:41:09.598 | V |                      |   version_nuke_common      = 9.0.3
+15:41:09.598 | V |                      |   version_nuke_global_tool = <null>
+15:41:10.101 | V |                      | InjectNonParameterValues.OnBuildInitialized (-100)
+15:41:10.130 | W |                      | Solution /Users/rhysparry/src/Dirt.Env/Dirt.Env.sln has active build configurations for the build project.
+Either enable SuppressBuildProjectCheck on Build.Solution or remove the following entries from the solution file:
+  - {FE909DB9-9113-44E4-8A46-12D0001582BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+  - {FE909DB9-9113-44E4-8A46-12D0001582BC}.Release|Any CPU.Build.0 = Release|Any CPU
+15:41:10.136 | V |                      | EventInvoker.OnBuildInitialized (-3.4028235E+38)
+15:41:10.141 | V | Restore              | EventInvoker.OnTargetRunning (-3.4028235E+38)
+15:41:10.160 | I | Restore              | > /usr/local/share/dotnet/dotnet restore /Users/rhysparry/src/Dirt.Env/Dirt.Env.sln
+15:41:10.160 | V | Restore              | @ /Users/rhysparry/src/Dirt.Env
+15:41:10.456 | D | Restore              |   Determining projects to restore...
+15:41:10.583 | D | Restore              |   All projects are up-to-date for restore.
+15:41:10.599 | V | Restore              | Telemetry.OnTargetSucceeded (0)
+15:41:10.695 | V | Restore              | Sending TargetSucceeded telemetry event ...
+15:41:10.695 | V | Restore              |   build_components         = 
+15:41:10.695 | V | Restore              |   build_type               = Project
+15:41:10.695 | V | Restore              |   compile_time             = <null>
+15:41:10.695 | V | Restore              |   config_generators        = 
+15:41:10.695 | V | Restore              |   host                     = Terminal
+15:41:10.695 | V | Restore              |   num_custom_components    = 0
+15:41:10.695 | V | Restore              |   num_custom_extensions    = 0
+15:41:10.695 | V | Restore              |   num_partitioned_targets  = 0
+15:41:10.695 | V | Restore              |   num_secrets              = 1
+15:41:10.695 | V | Restore              |   num_targets              = 6
+15:41:10.695 | V | Restore              |   os_architecture          = Arm64
+15:41:10.695 | V | Restore              |   os_platform              = OSX
+15:41:10.695 | V | Restore              |   repo_branch              = main
+15:41:10.695 | V | Restore              |   repo_commit              = b6c9dc
+15:41:10.695 | V | Restore              |   repo_provider            = GitHub
+15:41:10.695 | V | Restore              |   repo_url                 = 3bcd90
+15:41:10.695 | V | Restore              |   target_current_partition = 1
+15:41:10.695 | V | Restore              |   target_duration          = 0
+15:41:10.695 | V | Restore              |   target_framework         = .NETCoreApp,Version=v8.0
+15:41:10.695 | V | Restore              |   target_name              = Restore
+15:41:10.695 | V | Restore              |   target_total_partitions  = 1
+15:41:10.695 | V | Restore              |   version_dotnet_sdk       = 8.0.404
+15:41:10.695 | V | Restore              |   version_nuke_common      = 9.0.3
+15:41:10.695 | V | Restore              |   version_nuke_global_tool = <null>
+15:41:10.999 | V | Restore              | EventInvoker.OnTargetSucceeded (-3.4028235E+38)
+15:41:10.999 | V | Compile              | EventInvoker.OnTargetRunning (-3.4028235E+38)
+15:41:11.010 | I | Compile              | > /usr/local/share/dotnet/dotnet build /Users/rhysparry/src/Dirt.Env/Dirt.Env.sln --configuration Debug --property:Version=1.1.0-dev.01JEJCJCA8V1NAXJ38ABVTDAQF --property:AssemblyVersion=1.1.0 --no-restore
+15:41:11.010 | V | Compile              | @ /Users/rhysparry/src/Dirt.Env
+15:41:11.428 | D | Compile              |   _build -> /Users/rhysparry/src/Dirt.Env/build/bin/Debug/_build.dll
+15:41:11.525 | D | Compile              |   Dirt.Env -> /Users/rhysparry/src/Dirt.Env/Dirt.Env/bin/Debug/net8.0/Dirt.Env.dll
+15:41:11.786 | D | Compile              |   Dirt.Env.Tests -> /Users/rhysparry/src/Dirt.Env/Dirt.Env.Tests/bin/Debug/net8.0/Dirt.Env.Tests.dll
+15:41:11.796 | D | Compile              | 
+15:41:11.797 | D | Compile              | Build succeeded.
+15:41:11.797 | D | Compile              |     0 Warning(s)
+15:41:11.797 | D | Compile              |     0 Error(s)
+15:41:11.797 | D | Compile              | 
+15:41:11.797 | D | Compile              | Time Elapsed 00:00:00.66
+15:41:11.805 | V | Compile              | Telemetry.OnTargetSucceeded (0)
+15:41:11.900 | V | Compile              | Sending TargetSucceeded telemetry event ...
+15:41:11.900 | V | Compile              |   build_components         = 
+15:41:11.900 | V | Compile              |   build_type               = Project
+15:41:11.900 | V | Compile              |   compile_time             = <null>
+15:41:11.901 | V | Compile              |   config_generators        = 
+15:41:11.901 | V | Compile              |   host                     = Terminal
+15:41:11.901 | V | Compile              |   num_custom_components    = 0
+15:41:11.901 | V | Compile              |   num_custom_extensions    = 0
+15:41:11.901 | V | Compile              |   num_partitioned_targets  = 0
+15:41:11.901 | V | Compile              |   num_secrets              = 1
+15:41:11.901 | V | Compile              |   num_targets              = 6
+15:41:11.901 | V | Compile              |   os_architecture          = Arm64
+15:41:11.901 | V | Compile              |   os_platform              = OSX
+15:41:11.901 | V | Compile              |   repo_branch              = main
+15:41:11.901 | V | Compile              |   repo_commit              = b6c9dc
+15:41:11.901 | V | Compile              |   repo_provider            = GitHub
+15:41:11.901 | V | Compile              |   repo_url                 = 3bcd90
+15:41:11.901 | V | Compile              |   target_current_partition = 1
+15:41:11.901 | V | Compile              |   target_duration          = 1
+15:41:11.901 | V | Compile              |   target_framework         = .NETCoreApp,Version=v8.0
+15:41:11.901 | V | Compile              |   target_name              = Compile
+15:41:11.901 | V | Compile              |   target_total_partitions  = 1
+15:41:11.901 | V | Compile              |   version_dotnet_sdk       = 8.0.404
+15:41:11.901 | V | Compile              |   version_nuke_common      = 9.0.3
+15:41:11.901 | V | Compile              |   version_nuke_global_tool = <null>
+15:41:12.238 | V | Compile              | EventInvoker.OnTargetSucceeded (-3.4028235E+38)
+15:41:12.238 | V | Test                 | EventInvoker.OnTargetRunning (-3.4028235E+38)
+15:41:12.248 | I | Test                 | > /usr/local/share/dotnet/dotnet test /Users/rhysparry/src/Dirt.Env/Dirt.Env.sln --configuration Debug --verbosity normal --no-build
+15:41:12.248 | V | Test                 | @ /Users/rhysparry/src/Dirt.Env
+15:41:12.372 | D | Test                 | Build started 8/12/2024 3:41:12 pm.
+15:41:12.431 | D | Test                 |      1>Project "/Users/rhysparry/src/Dirt.Env/Dirt.Env.sln" on node 1 (VSTest target(s)).
+15:41:12.431 | D | Test                 |      1>ValidateSolutionConfiguration:
+15:41:12.431 | D | Test                 |          Building solution configuration "Debug|Any CPU".
+15:41:12.734 | D | Test                 | Test run for /Users/rhysparry/src/Dirt.Env/Dirt.Env.Tests/bin/Debug/net8.0/Dirt.Env.Tests.dll (.NETCoreApp,Version=v8.0)
+15:41:12.820 | D | Test                 | VSTest version 17.11.1 (arm64)
+15:41:12.821 | D | Test                 | 
+15:41:12.872 | D | Test                 | Starting test execution, please wait...
+15:41:12.886 | D | Test                 | A total of 1 test files matched the specified pattern.
+15:41:13.111 | D | Test                 | [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 8.0.11)
+15:41:13.141 | D | Test                 | [xUnit.net 00:00:00.03]   Discovering: Dirt.Env.Tests
+15:41:13.154 | D | Test                 | [xUnit.net 00:00:00.04]   Discovered:  Dirt.Env.Tests
+15:41:13.155 | D | Test                 | [xUnit.net 00:00:00.04]   Starting:    Dirt.Env.Tests
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvTests.PathWillReturnEmptyEvenIfUnderlyingVariableIsNotPresent [6 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvTests.NewEnvCreatesSystemEnvironment [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.IgnoringWhenAppendingPathPreservesOriginal [8 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.EnvBuilderAutomaticallyHandlesSettingPathVariable [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.CanAppendPathEvenWhenPathVariableIsNotSet [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.UsingWindowsPathSetsPathAsExpected [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.EnvBuilderDoesNotOverwriteExistingVariablesWhenSkipDuplicate [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.SupersedingWhenAppendingPathRemovesOriginal [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.UsingNixPathSetsPathAsExpected [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.TryGetValueReturnsTrueWhenKeyIsPresent [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.EnvBuilderOverwritesExistingVariablesByDefault [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvTests.EnvKeysAreCaseSensitive [1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.EnvBuilderCanUnsetPreviouslySetVariables [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvTests.EnvCanGetAnyPathSeparatedValue [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.NewEnvBuilderCreatesEmptyEnvironment [< 1 ms]
+15:41:13.204 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.CanPrependPath [< 1 ms]
+15:41:13.204 | D | Test                 | [xUnit.net 00:00:00.09]   Finished:    Dirt.Env.Tests
+15:41:13.229 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.CanPrependPathEventWhenPathVariableIsNotSet [< 1 ms]
+15:41:13.229 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.EnvBuilderClearsVariables [< 1 ms]
+15:41:13.230 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.SkippingWhenAppendingPathPreservesOriginal [< 1 ms]
+15:41:13.230 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.CanInstantiateUsingSystemEnvironment [< 1 ms]
+15:41:13.230 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.TryGetValueReturnsFalseWhenKeyIsNotPresent [< 1 ms]
+15:41:13.230 | D | Test                 |   Passed Dirt.Tests.EnvTests.NewEnvWithCustomEnvironment [< 1 ms]
+15:41:13.230 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.ValueContainsExpectedValues [< 1 ms]
+15:41:13.230 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.CanBuildWithCustomEnvironment [< 1 ms]
+15:41:13.230 | D | Test                 |   Passed Dirt.Tests.EnvBuilderTests.EnvBuilderAddsVariable [< 1 ms]
+15:41:13.231 | D | Test                 | 
+15:41:13.233 | D | Test                 | Test Run Successful.
+15:41:13.233 | D | Test                 | Total tests: 25
+15:41:13.233 | D | Test                 |      Passed: 25
+15:41:13.233 | D | Test                 |  Total time: 0.3453 Seconds
+15:41:13.244 | D | Test                 |      1>Done Building Project "/Users/rhysparry/src/Dirt.Env/Dirt.Env.sln" (VSTest target(s)).
+15:41:13.262 | D | Test                 | 
+15:41:13.262 | D | Test                 | Build succeeded.
+15:41:13.262 | D | Test                 |     0 Warning(s)
+15:41:13.262 | D | Test                 |     0 Error(s)
+15:41:13.263 | D | Test                 | 
+15:41:13.263 | D | Test                 | Time Elapsed 00:00:00.89
+15:41:13.268 | V | Test                 | Telemetry.OnTargetSucceeded (0)
+15:41:13.363 | V | Test                 | Sending TargetSucceeded telemetry event ...
+15:41:13.363 | V | Test                 |   build_components         = 
+15:41:13.363 | V | Test                 |   build_type               = Project
+15:41:13.363 | V | Test                 |   compile_time             = <null>
+15:41:13.363 | V | Test                 |   config_generators        = 
+15:41:13.363 | V | Test                 |   host                     = Terminal
+15:41:13.363 | V | Test                 |   num_custom_components    = 0
+15:41:13.363 | V | Test                 |   num_custom_extensions    = 0
+15:41:13.363 | V | Test                 |   num_partitioned_targets  = 0
+15:41:13.363 | V | Test                 |   num_secrets              = 1
+15:41:13.363 | V | Test                 |   num_targets              = 6
+15:41:13.363 | V | Test                 |   os_architecture          = Arm64
+15:41:13.363 | V | Test                 |   os_platform              = OSX
+15:41:13.363 | V | Test                 |   repo_branch              = main
+15:41:13.363 | V | Test                 |   repo_commit              = b6c9dc
+15:41:13.363 | V | Test                 |   repo_provider            = GitHub
+15:41:13.363 | V | Test                 |   repo_url                 = 3bcd90
+15:41:13.363 | V | Test                 |   target_current_partition = 1
+15:41:13.363 | V | Test                 |   target_duration          = 1
+15:41:13.363 | V | Test                 |   target_framework         = .NETCoreApp,Version=v8.0
+15:41:13.363 | V | Test                 |   target_name              = Test
+15:41:13.363 | V | Test                 |   target_total_partitions  = 1
+15:41:13.363 | V | Test                 |   version_dotnet_sdk       = 8.0.404
+15:41:13.363 | V | Test                 |   version_nuke_common      = 9.0.3
+15:41:13.363 | V | Test                 |   version_nuke_global_tool = <null>
+15:41:13.661 | V | Test                 | EventInvoker.OnTargetSucceeded (-3.4028235E+38)

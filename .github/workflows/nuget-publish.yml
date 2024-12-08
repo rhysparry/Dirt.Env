@@ -8,38 +8,36 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup .NET Core
+        with:
+          fetch-depth: 0
+      - name: Setup .NET Core 8
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-
-      - name: Install just
-        uses: extractions/setup-just@v2
-
-      - name: Restore dependencies
-        run: just --no-deps restore
-
-      - name: Build
-        run: just --no-deps build
-
+      - name: "Install tools"
+        uses: taiki-e/install-action@v2
+        with:
+          tool: just@1.36.0,git-cliff@2.6.1
       - name: Test
-        run: just --no-deps test
-
+        run: just test
+        if: ${{ ! startsWith(github.ref, 'refs/tags/v') }}
       - name: Pack
-        run: just --no-deps pack
+        run: just pack
         if: startsWith(github.ref, 'refs/tags/v')
-
+      - name: Create Release Notes
+        run: just release-notes
+        if: startsWith(github.ref, 'refs/tags/v')
       - name: Create a release with the NuGet Package
         uses: softprops/action-gh-release@v2
         with:
-          files: '**/*.nupkg'
+          body_path: artifacts/RELEASE-NOTES.md
+          files: |
+            artifacts/*.nupkg
+            artifacts/*.snupkg
         if: startsWith(github.ref, 'refs/tags/v')
-
       - name: Load NuGet API Key
         uses: 1password/load-secrets-action@v2
         with:
@@ -48,8 +46,6 @@ jobs:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
           NUGET_API_KEY: "op://GitHub Actions/NuGet API Dirt/credential"
         if: startsWith(github.ref, 'refs/tags/v')
-
       - name: Push NuGet package
-        run: just --no-deps nuget-push
+        run: just nuget-push-no-pack
         if: startsWith(github.ref, 'refs/tags/v')
-
