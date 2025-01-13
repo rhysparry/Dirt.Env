@@ -18,7 +18,7 @@ updates:
       test-dependencies:
         patterns:
           - Microsoft.NET.Test.Sdk
-          - xunit
+          - xunit.v3
           - xunit.runner.visualstudio
           - coverlet.collector
   - package-ecosystem: "github-actions" # See documentation for possible values
