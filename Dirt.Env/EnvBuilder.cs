@@ -186,19 +186,18 @@ public sealed class EnvBuilder
         return AppendPath(key, value, DefaultDuplicatePathStrategy);
     }
 
-    private static bool HandleDuplicatePath(List<string> values, string value, IfDuplicatePath ifDuplicatePath)
-    {
-        switch (ifDuplicatePath)
+    private static bool HandleDuplicatePath(List<string> values, string value, IfDuplicatePath ifDuplicatePath) =>
+        ifDuplicatePath switch
         {
-            case IfDuplicatePath.Supersede:
-                values.RemoveAll(v => v == value);
-                return true;
-            case IfDuplicatePath.Skip:
-                return !values.Contains(value);
-            case IfDuplicatePath.Ignore:
-            default:
-                return true;
-        }
+            IfDuplicatePath.Supersede => RemoveAll(values, value),
+            IfDuplicatePath.Skip => !values.Contains(value),
+            _ => true
+        };
+
+    private static bool RemoveAll(List<string> values, string value)
+    {
+        values.RemoveAll(v => v == value);
+        return true;
     }
 
     /// <summary>
