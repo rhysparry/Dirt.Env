@@ -18,7 +18,7 @@ jobs:
         with:
           dotnet-version: '10.0.x'
       - name: "Install tools"
-        uses: taiki-e/install-action@v2
+        uses: taiki-e/install-action@v2.85.5
         with:
           tool: just@1.36.0,git-cliff@2.6.1
       - name: Test
